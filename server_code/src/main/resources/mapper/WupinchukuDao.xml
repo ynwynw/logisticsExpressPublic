@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.WupinchukuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.WupinchukuEntity" id="wupinchukuMap">
+        <result property="yonghuzhanghao" column="yonghuzhanghao"/>
+        <result property="yonghuxingming" column="yonghuxingming"/>
+        <result property="shoujihaoma" column="shoujihaoma"/>
+        <result property="wupinxinxi" column="wupinxinxi"/>
+        <result property="wupinmingcheng" column="wupinmingcheng"/>
+        <result property="wupintupian" column="wupintupian"/>
+        <result property="chukushijian" column="chukushijian"/>
+        <result property="shuliang" column="shuliang"/>
+        <result property="wupinchuku" column="wupinchuku"/>
+        <result property="jijianzhanghao" column="jijianzhanghao"/>
+        <result property="jijianxingming" column="jijianxingming"/>
+        <result property="yuangongzhanghao" column="yuangongzhanghao"/>
+        <result property="yuangongxingming" column="yuangongxingming"/>
+        <result property="shouji" column="shouji"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.WupinchukuView" >
+
+		SELECT  wupinchuku.* FROM wupinchuku  wupinchuku 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.WupinchukuView" >
+		SELECT * FROM wupinchuku  wupinchuku <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+
+
+</mapper>
